@@ -40,13 +40,26 @@ app.post("/api/signup", async (req, res) => {
 
 });
 
+app.post("/logout", async (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            // Handle error if logout fails
+            res.status(500).json({ error: 'Logout failed' });
+        } else {
+            // Logout successful
+            res.status(200).json({ message: 'Logout successful' });
+        }
+    });
+
+});
+
 app.post("/api/login", async (req, res) => {
     const user = await Voter.findOne({
         name: req.body.name,
         vid: req.body.vid
     });
 
-    if (user){
+    if (user) {
         const token = jwt.sign({
             name: user.name,
             vid: user.vid

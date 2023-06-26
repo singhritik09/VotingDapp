@@ -1,6 +1,8 @@
 import React from "react";
+import { useState,useEffect } from "react";
 
 function Navbar() {
+
     const [navbarOpen, setNavbarOpen] = React.useState(false);
     return (
         <div>
@@ -31,8 +33,10 @@ function Navbar() {
                     </div>
                 </div>
             </nav>
-            
+
         </div>
+        
+
     );
 }
 
