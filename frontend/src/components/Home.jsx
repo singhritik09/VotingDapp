@@ -6,7 +6,7 @@ import Sidebar from "./Sidebar";
 function Home()
 {
     return (
-        <div className="container">
+        <div className="container bg-gray-100">
             <Navbar/>
             <Sidebar/>
         </div>

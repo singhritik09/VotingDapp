@@ -1,5 +1,5 @@
 import { useState } from 'react'
-
+import Navbar from './Navbar'
 function Login() {
 	const [name, setName] = useState('')
 	const [vid, setVid] = useState('')
@@ -29,7 +29,9 @@ function Login() {
 		}
 	}
 	return (
+        
 		<div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
+          <Navbar/>
             <div className="w-full p-6 m-auto bg-white rounded-md shadow-md lg:max-w-xl">
                 <form onSubmit={loginUser} className="mt-6">
                     <div className="mb-2">

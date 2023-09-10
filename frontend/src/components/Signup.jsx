@@ -30,7 +30,7 @@ function Signup() {
             <div className="w-full p-6 m-auto bg-white rounded-md shadow-md lg:max-w-xl">
                 <form onSubmit={registerUser} className="mt-6">
                     <div className="mb-2">
-                        <h2 className="text-3xl font-semibold text-center text-purple-700 underline">SIGN UP</h2>
+                        <h2 className="text-3xl font-semibold text-center text-purple-700 underline">Add Voter to Database</h2>
                         <label
                             for="email"
                             className="block text-sm font-semibold text-gray-800"
@@ -63,7 +63,7 @@ function Signup() {
 
                     <div className="mt-6">
                         <button type="submit" className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600">
-                            Signup
+                            Create Voter
                         </button>
                     </div>
                 </form>

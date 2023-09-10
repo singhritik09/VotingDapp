@@ -2,22 +2,22 @@ const party = [
     {
         id: 0,
         logo:"./images/bjp.png",
-        name: "BJP",
+        name: "Bhartiya Janta Party",
     },
     {
         id: 1,
         logo:"./images/congress.png",
-        name: "INC",
+        name: "Indian National Congress",
     },
     {
         id: 2,
         logo:"./images/aap.png",
-        name: "AAM",
+        name: "Aam Aadmi Party",
     },
     {
         id: 3,
         logo:"./images/samajwadi.png",
-        name: "SP",
+        name: "Samajwadi Party",
     },
 
 ];

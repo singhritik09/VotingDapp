@@ -13,18 +13,15 @@ import { contractAbi, contractAddress } from '../Constant/constant';
 
 
 const handleVote = async (candidateId) => {
-   
-const provider = new ethers.providers.Web3Provider(window.ethereum);
-const signer = provider.getSigner();
-const contractInstance = new ethers.Contract(contractAddress, contractAbi, signer);
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    const contractInstance = new ethers.Contract(contractAddress, contractAbi, signer);
     try {
         await contractInstance.vote(candidateId);
-        console.log("Vote recorded successfully");
-        // Perform any additional actions after successful vote
-      } catch (error) {
+        window.alert("Vote Recorded Successfuly");
+    } catch (error) {
         console.log("Vote failed:", error);
-        // Handle error if the vote fails
-      }
+    }
 
 };
 
@@ -48,15 +45,12 @@ function mapping(party) {
 
 const handleLogout = async () => {
     try {
-        await axios.post('/logout');
-        // Clear any client-side data (e.g., remove tokens from local storage)
-        // Redirect the user to the login page or perform any other necessary actions
+        // await axios.get('/logout');
+        window.location.href = '/';
     } catch (error) {
-        // Handle error if logout fails
+        console.error('Error while logging out:', error);
     }
 };
-
-
 
 function Sidebar() {
     const [provider, setProvider] = useState(null);
@@ -123,8 +117,6 @@ function Sidebar() {
                 vote: candidate.voteCount.toNumber()
             }
         })
-        // console.log(candidateList);
-        console.log("Votes for congress: ",formattedCandidates[1].voteCount);
         setCandidates(formattedCandidates);
     }
 
@@ -188,7 +180,7 @@ function Sidebar() {
                                 </li>
                                 <li className="rounded-sm">
                                     <a
-                                        href="#"
+                                        href="/status"
                                         className="flex items-center p-2 space-x-3 rounded-md"
                                     >
                                         <svg
